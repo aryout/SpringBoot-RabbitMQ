@@ -10,8 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringbootRabbitmqApplicationTests {
-	@Autowired
-	User user;
+/*	@Autowired
+	User user;*/ // 实体不是bean，无法自动注入
 
 	@Test
 	public void contextLoads() {
