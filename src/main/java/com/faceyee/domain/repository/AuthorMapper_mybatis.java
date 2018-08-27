@@ -5,6 +5,7 @@ package com.faceyee.domain.repository;
  */
 
 import com.faceyee.domain.entity.Author;
+import org.mapstruct.Mapper;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import java.util.List;
