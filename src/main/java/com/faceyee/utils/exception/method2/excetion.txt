@@ -1,0 +1,12 @@
+自定义错误需要继承DescribeException,然后throw时传入code和message就行.
+在GlobalExceptionHandler中对该错误定制拦截处理方法.通常都是返回一个RestServiceError
+
+除了404,500等等错误是返回一个页面外,其他错误都是返回Json格式的RestServiceError包装对象
+即错误页面都在ErrorPageFactory中定义,错误json都在GlobalExceptionHandler中定义
+
+RestServiceError通常不直接在代码中使用,而只在GlobalExceptionHandler中拦截错误时封装错误使用
+
+所有自定义错误应该在RestServiceError中的enum(Type)中定义,然后在i18n国际化中配置方言
+代码中可以直接抛出错误和自定义错误,只需传入现场详细信息message,方便logger打印更详细信息
+
+这样,详细的信息有logger打印,而返回的rest信息是固定配置的统一的[每个错误和code和message是对应的]
