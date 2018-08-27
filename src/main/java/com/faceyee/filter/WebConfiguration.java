@@ -1,4 +1,4 @@
-package com.faceyee.Filter;
+package com.faceyee.filter;
 
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -21,13 +21,13 @@ public class WebConfiguration {
         return new RemoteIpFilter();
     }
 
-    @Bean
-    public FilterRegistrationBean testFilterRegistration() {
+    @Bean // 通过代码注册的方式来使用Filter
+    public FilterRegistrationBean setFilter() {
 
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new MyFilter());
         registration.addUrlPatterns("/*");
-        registration.addInitParameter("paramName", "paramValue");
+        //registration.addInitParameter("paramName", "paramValue");
         registration.setName("MyFilter");
         registration.setOrder(1);
         return registration;

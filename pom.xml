@@ -64,38 +64,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
-		<!--Redis - Spring集成-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<!--pring-data-redis已经被引入依赖,不需要单独再引-->
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-			<!-- 1.5的版本默认采用的连接池技术是jedis  2.0以上版本默认连接池是lettuce, 在这里采用jedis，所以需要排除lettuce的jar -->
-			<exclusions> <!--在这里排除,在项目中用到也会自己引入的-->
-				<!--<exclusion>-->
-					<!--<groupId>io.lettuce</groupId>-->
-					<!--<artifactId>lettuce-core</artifactId>-->
-				<!--</exclusion>-->
-			</exclusions>
-		</dependency>
-
-		<!-- Redis客户端 -->
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<!--Jedis已经引入依赖common-pool2,无需单独再引-->
-			<artifactId>jedis</artifactId>
-			<version>2.9.0</version>
-		</dependency>
-
-		<!--Redis 支持 session-->
-		<dependency>
-			<groupId>org.springframework.session</groupId>
-			<artifactId>spring-session-data-redis</artifactId>
-			<!--使用redis对session进行一个持久化操作,当服务器重启时，可以从redis中反序列化取出session，重新获取用户会话信息-->
-			<version>2.0.2.RELEASE</version>
-		</dependency>
-
-
 		<!--数据源-->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -129,22 +97,18 @@
 		</dependency>
 
 
+		<!--Mybatis 分页插件-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <version>5.0.1</version>
         </dependency>
+
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.34</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>1.1.6</version>
 		</dependency>
 
 		<!--mq-->
@@ -183,16 +147,10 @@
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
-		<!--ehcache的依赖-->
+		<!--ehcache缓存的依赖-->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.1.1</version>
 		</dependency>
 
 	</dependencies>
