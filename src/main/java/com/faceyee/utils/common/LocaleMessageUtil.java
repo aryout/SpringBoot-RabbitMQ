@@ -1,4 +1,4 @@
-package com.faceyee.utils.readConfig;
+package com.faceyee.utils.common;
 
 import com.faceyee.utils.restful.RestServiceError;
 import org.springframework.beans.factory.annotation.Autowired;

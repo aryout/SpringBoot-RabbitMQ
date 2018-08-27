@@ -1,11 +1,8 @@
-package com.faceyee.utils.readConfig;
+package com.faceyee.utils.common;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by 97390 on 8/21/2018.

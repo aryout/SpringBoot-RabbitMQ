@@ -1,6 +1,5 @@
 package com.faceyee.domain.repository;
 
-import com.faceyee.Springbootdemo1Application;
 import com.faceyee.domain.entity.User;
 import org.junit.After;
 import org.junit.Assert;

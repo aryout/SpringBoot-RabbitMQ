@@ -1,6 +1,6 @@
 package com.faceyee.utils.exception.method2;
 
-import com.faceyee.utils.readConfig.LocaleMessageUtil;
+import com.faceyee.utils.common.LocaleMessageUtil;
 import com.faceyee.utils.restful.RestServiceError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
