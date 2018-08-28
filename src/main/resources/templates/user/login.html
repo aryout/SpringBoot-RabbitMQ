@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="../static/scripts/jquery.min.js"></script>
+    <script src="../static/scripts/login.js"></script>
+    <title>Title</title>
+    <script>
+        function ajaxcaptcha(){
+            $.ajax({
+                type: "POST",
+                url: basePath+"captcha",
+                dataType: "json",
+                success: function(result){
+                    //JQUERY
+                    //$("#captchaimg").prop('src', 'data:image/jpeg;base64,'+result.img);
+                    localStorage.setItem("ctoken",result.token);
+                    // 生成的Base64编码前要加入data:image/jpeg;base64,才能解析回图片
+                    vm.src = 'data:image/jpeg;base64,'+result.img;
+                }
+            });
+        }
+    </script>
+
+</head>
+<h1>TEST PAGE</h1>
+<body>
+
+<div class="form-group has-feedback">
+    <img id="captchaimg" alt="如果看不清楚，请单击图片刷新！" class="pointer" :src="src"  @click="refreshCode">
+    <a href="javascript:;" @click="refreshCode">{{$t("refresh")}}</a>
+
+</div>
+</body>
+</html>

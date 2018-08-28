@@ -4,7 +4,6 @@ package com.faceyee.controller.api;
  * Created by 97390 on 8/24/2018.
  */
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
